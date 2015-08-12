@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flowcharts</title>
+        <link rel="stylesheet" href="bower_components/mermaid/dist/mermaid.css">
+        <script src="bower_components/mermaid/dist/mermaid.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    </head>
+    <body>
+        <div class="mermaid">
+            graph LR
+                subgraph Backbone
+                    1[Object List Element]
+                    A[Django REST Endpoint]
+                    B[Backbone Collection]
+                    C[Backbone Views]
+                    E[Form Element]
+                    A -- "AJAX Get" --> B
+                    B -- "AJAX Post" --> A
+                    B -- "Fetch Collection" -->C
+                    C -- "Underscore Templates" --> 1
+                    E -- "Form Submit" --> C
+                    C -- "Add to Collection" -->B
+                    C -- "Underscore Templates" --> E
+                end
+        </div>
+    </body>
+</html>

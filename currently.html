@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flowcharts</title>
+        <link rel="stylesheet" href="bower_components/mermaid/dist/mermaid.css">
+        <script src="bower_components/mermaid/dist/mermaid.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    </head>
+    <body>
+        <div class="mermaid">
+            graph LR
+                subgraph Currently
+                    G[Object List Element]
+                    H[Django View]
+                    I[Form Element]
+                    J[AJAX Call]
+                    K[Django WSGI]
+                    I -- "Form Submit" -->J
+                    J -- "Underscore Templates" --> G
+                    J -- "AJAX Post" --> H
+                    H -- "Success: JSON Object" --> J
+                    K --> G
+                end
+        </div>
+    </body>
+</html>

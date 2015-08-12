@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flowcharts</title>
+        <link rel="stylesheet" href="bower_components/mermaid/dist/mermaid.css">
+        <script src="bower_components/mermaid/dist/mermaid.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    </head>
+    <body>
+        <div class="mermaid">
+            graph LR
+                subgraph Collections and Views
+                    Collection[Backbone Collection]
+                    View[CollectionView]
+
+                    Collection === View
+                    Collection --> a[Model A]
+                    Collection --> b[Model B]
+                    Collection --> c[Model C]
+                    View --> aa[View A]
+                    View --> bb[View B]
+                    View --> cc[View C]
+                    aa === a
+                    bb === b
+                    cc === c
+                end
+        </div>
+    </body>
+</html>
