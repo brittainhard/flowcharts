@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title>Project Page</title>
+        <link rel="stylesheet" href="bower_components/mermaid/dist/mermaid.css">
+        <script src="bower_components/mermaid/dist/mermaid.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    </head>
+    <body>
+        <div class="mermaid">
+            graph TB
+                subgraph Project Page
+                    WSGI[Django WSGI]
+                    DOM[DOM]
+                    BB[Backbone]
+                    REST[Django REST Framework]
+                    Django[Django]
+                    View[ProjectCollectionView]
+                    Collection["ProjectCollection (Collection of Models)"]
+                    Form[Add Project Form]
+                    List["Project List (View for each Model)"]
+
+                    WSGI -- "Render Page" --> DOM
+                    WSGI -- "Static Files" --> BB
+                    View === Collection
+                    BB --> View
+                    BB --> Collection
+                    View -- "collection.add();" --> Collection
+                    View -- "Render Form, Display Validation" --> Form
+                    View -- "Render Each Project" --> List
+                    Form -- "Form Submit" --> View
+                    Collection -- "AJAX Post (add new model, handle validation)" --> REST
+                    REST -- "AJAX Get (list of projects)" --> Collection
+                    Collection -- "Render Models" --> View
+                    Form --> DOM
+                    List --> DOM
+                    Django === WSGI
+                    Django === REST
+
+                end
+        </div>
+    </body>
+</html>

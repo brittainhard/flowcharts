@@ -26,15 +26,15 @@
     "dagre-d3": "0.3.3"
   },
   "homepage": "https://github.com/knsv/mermaid",
-  "version": "0.5.1",
-  "_release": "0.5.1",
+  "version": "7.0.0",
+  "_release": "7.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.1",
-    "commit": "0dc983d04ab9400e604a460eea3a409570961ab2"
+    "tag": "7.0.0",
+    "commit": "fb70b9742a22f8673cdd3a8d74fcbbc6ea03b432"
   },
-  "_source": "git://github.com/knsv/mermaid.git",
-  "_target": "~0.5.1",
+  "_source": "https://github.com/knsv/mermaid.git",
+  "_target": "^7.0.0",
   "_originalSource": "mermaid",
   "_direct": true
 }
