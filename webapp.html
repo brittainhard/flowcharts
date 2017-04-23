@@ -9,23 +9,26 @@
     </head>
     <body>
         <div class="mermaid">
-            graph RL
-                node[EC2 Node]
+            graph BT
+                node((EC2 Node))
                 taxcalc[TaxCalc]
                 btax[BTax]
                 job[Submit Job]
                 form[Forms]
-                model[Models]
                 localtaxcalc[Local TaxCalc]
                 localbtax[Local BTax]
+                dynamic[Dynamic]
+                results[Results]
 
-                node -.- btax
-                node -.- taxcalc
+                taxcalc --> node
+                btax --> node
                 job -- JSON --> node
-                localtaxcalc -- Paramaters --> form
-                localbtax -- Parameters --> form
-                form -.- model
+                localtaxcalc -- Parameter Generation --> form
+                localbtax --> form
                 form --> job
+                job --> results
+                results --> dynamic
+                dynamic --> form
         </div>
     </body>
 </html>
