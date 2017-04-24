@@ -13,22 +13,20 @@
                 node((EC2 Node))
                 taxcalc[TaxCalc]
                 btax[BTax]
-                job[Submit Job]
+                webapp{Webapp}
                 form[Forms]
                 localtaxcalc[Local TaxCalc]
                 localbtax[Local BTax]
-                dynamic[Dynamic]
-                results[Results]
+                models[Models]
 
                 taxcalc --> node
                 btax --> node
-                job -- JSON --> node
-                localtaxcalc -- Parameter Generation --> form
-                localbtax --> form
-                form --> job
-                job --> results
-                results --> dynamic
-                dynamic --> form
+                webapp == Submit Reform ==> node
+                node == Results ==> webapp
+                localtaxcalc -- Policy --> form
+                localbtax -- Policy --> form
+                form --> webapp
+                models -.- form
         </div>
     </body>
 </html>
